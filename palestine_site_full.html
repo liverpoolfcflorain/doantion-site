@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stand for Gaza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* ==========================================================================
+       1. RESET & CSS VARIABLES (TOKENS)
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #F4EFE4;
+      --parchment: #EAE2CC;
+      --ink: #16100A;
+      --ink2: #2A1E0E;
+      --red: #7A1515;
+      --red2: #A83020;
+      --olive: #3D5224;
+      --gold: #8C6A1A;
+      --gold2: #B8892A;
+      --warm: #C9B99A;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       2. NAVIGATION BAR
+       ========================================================================== */
+    nav {
+      background: var(--ink);
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 2px solid var(--red);
+    }
+
+    .nav-logo {
+      color: var(--cream);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      letter-spacing: .04em;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li a,
+    .nav-links li button {
+      color: #C4B898;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .9rem 1rem;
+      display: flex;
+      align-items: center;
+      transition: color .2s, background .2s;
+      border-right: 1px solid rgba(255, 255, 255, .06);
+      background: none;
+      border-top: none;
+      border-bottom: 2px solid transparent;
+      border-left: none;
+      cursor: pointer;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li button:hover {
+      color: var(--cream);
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .nav-links li button.active {
+      color: var(--cream);
+      border-bottom: 2px solid var(--red);
+    }
+
+    .nav-support {
+      background: var(--red) !important;
+      color: white !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-support:hover {
+      background: #9A2020 !important;
+    }
+
+    /* ==========================================================================
+       3. CORE PAGE ARCHITECTURE & BRANDING
+       ========================================================================== */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .tatreez {
+      width: 100%;
+      height: 24px;
+      background: var(--ink);
+      overflow: hidden;
+    }
+
+    .tatreez svg {
+      width: 100%;
+      height: 24px;
+      display: block;
+    }
+
+    /* ==========================================================================
+       4. HERO HEADLINE COVER MODULE
+       ========================================================================== */
+    .hero {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16,10,5,.92) 40%, rgba(16,10,5,.4) 75%, rgba(16,10,5,.15) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 3rem 3.5rem;
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Amiri', serif;
+      font-size: .85rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: .8rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.15;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      color: #D4915A;
+      font-style: italic;
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, .65);
+      font-size: .95rem;
+      max-width: 500px;
+      font-weight: 300;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-wh {
+      background: white;
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .65rem 1.6rem;
+      text-decoration: none;
+      border: 2px solid white;
+      font-weight: 600;
+      transition: all .2s;
+      cursor: pointer;
+    }
+
+    .btn-wh:hover {
+      background: transparent;
+      color: white;
+    }
+
+    .btn-gh {
+      background: transparent;
+      color: rgba(255, 255, 255, .8);
+      font-family: 'Source Serif 4', serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .65rem 1.6rem;
+      border: 2px solid rgba(255, 255, 255, .35);
+      transition: all .2s;
+      cursor: pointer;
+    }
+
+    .btn-gh:hover {
+      border-color: white;
+      color: white;
+    }
+
+    /* ==========================================================================
+       5. DONATION METRICS HUD BAND
+       ========================================================================== */
+    .don-band {
+      background: var(--ink2);
+      border-top: 3px solid var(--red);
+      border-bottom: 3px solid var(--red);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    .don-l {
+      padding: 1.8rem 2.5rem;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .don-lbl {
+      font-family: 'Amiri', serif;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: .3rem;
+    }
+
+    .don-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .don-c {
+      padding: 1.8rem 2rem;
+      text-align: center;
+    }
+
+    .don-total-lbl {
+      font-family: 'Amiri', serif;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35);
+      display: block;
+      margin-bottom: .1rem;
+    }
+
+    .don-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold2);
+      line-height: 1;
+      transition: color .3s, transform .25s;
+      display: inline-block;
+    }
+
+    .don-num.pop {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .don-donors {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      margin-top: .3rem;
+      font-style: italic;
+    }
+
+    .don-prog-wrap {
+      margin-top: .9rem;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .don-track {
+      height: 3px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .don-fill {
+      height: 100%;
+      background: var(--gold2);
+      border-radius: 2px;
+      transition: width .6s ease;
+    }
+
+    .don-goal-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: .68rem;
+      color: rgba(255, 255, 255, .3);
+      margin-top: .3rem;
+    }
+
+    .don-r {
+      padding: 1.8rem 2.5rem;
+      border-left: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .don-presets {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+    }
+
+    .don-pre {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .7);
+      font-family: 'Source Serif 4', serif;
+      font-size: .8rem;
+      padding: .35rem .8rem;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .don-pre:hover,
+    .don-pre.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .don-row {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    .don-in {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: white;
+      font-family: 'Source Serif 4', serif;
+      font-size: .9rem;
+      padding: .45rem .8rem;
+      width: 90px;
+      outline: none;
+    }
+
+    .don-in:focus {
+      border-color: var(--gold2);
+    }
+
+    .don-in::placeholder {
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .don-submit {
+      background: var(--red);
+      color: white;
+      font-family: 'Source Serif 4', serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .5rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .don-submit:hover {
+      background: #9A2020;
+    }
+
+    .don-note {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .25);
+      font-style: italic;
+    }
+
+    .don-live-badge {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .8rem;
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .don-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4AE888;
+      box-shadow: 0 0 6px #4AE888;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+
+    /* ==========================================================================
+       6. INTEGRATED PAYMENT BRANDS ROW
+       ========================================================================== */
+    .pay-methods-band {
+      background: var(--ink);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      border-bottom: 3px solid var(--red);
+    }
+
+    .pay-methods-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pay-methods-label {
+      font-family: 'Amiri', serif;
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .3);
+      white-space: nowrap;
+    }
+
+    .pay-methods-grid {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .pay-method {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      padding: .45rem .75rem;
+      text-decoration: none;
+      transition: background .2s, border .2s;
+      cursor: pointer;
+    }
+
+    .pay-method:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .25);
+    }
+
+    .pay-method-icon {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 3px;
+    }
+
+    .pay-method-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pay-method-name {
+      font-size: .78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.2;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .pay-method-sub {
+      font-size: .65rem;
+      color: rgba(255, 255, 255, .3);
+      letter-spacing: .04em;
+    }
+
+    /* ==========================================================================
+       7. SECTION GENERAL REUSABLE CONTAINERS
+       ========================================================================== */
+    .sec {
+      padding: 3rem 2.5rem;
+    }
+
+    .sec-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .sec-hd {
+      display: flex;
+      align-items: baseline;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: .7rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .sec-sub {
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--red2);
+      margin-left: .9rem;
+      padding-left: .9rem;
+      border-left: 1px solid var(--warm);
+    }
+
+    /* ==========================================================================
+       8. METADATA POST LABELS / PILLS
+       ========================================================================== */
+    .tag {
+      display: inline-block;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .2rem .65rem;
+      margin-bottom: .6rem;
+    }
+
+    .t-red { background: var(--red); color: #FFE0CC; }
+    .t-olive { background: var(--olive); color: #D4E8C0; }
+    .t-gold { background: var(--gold); color: #FFF0C8; }
+    .t-ink { background: var(--ink); color: #D4C8A8; }
+
+    /* ==========================================================================
+       9. FEATURED INVESTIGATIONS GRID LAYOUT
+       ========================================================================== */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2px;
+      background: var(--ink);
+    }
+
+    .feat-main {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .feat-main img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .feat-main:hover img {
+      transform: scale(1.03);
+    }
+
+    .feat-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16,10,5,.95) 35%, rgba(16,10,5,.3) 70%, transparent 100%);
+    }
+
+    .feat-body {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .feat-side {
+      background: var(--parchment);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feat-item {
+      display: flex;
+      flex: 1;
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .feat-item:last-child {
+      border-bottom: none;
+    }
+
+    .feat-item:hover {
+      background: #E8DFC5;
+    }
+
+    .feat-thumb {
+      width: 180px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .feat-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feat-ibody {
+      padding: 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feat-ibody h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-bottom: .4rem;
+    }
+
+    .feat-ibody p {
+      font-size: .8rem;
+      color: #5A4A28;
+      line-height: 1.5;
+    }
+
+    .feat-meta {
+      font-size: .72rem;
+      color: #9A8A68;
+      margin-top: .5rem;
+    }
+
+    /* ==========================================================================
+       10. ARCHIVE ARTICLE GRID MODULE
+       ========================================================================== */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2px;
+      background: var(--ink);
+    }
+
+    .art-card {
+      background: var(--parchment);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .art-card:hover {
+      background: #E8DFC5;
+    }
+
+    .art-img {
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .art-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+      display: block;
+    }
+
+    .art-card:hover .art-img img {
+      transform: scale(1.04);
+    }
+
+    .art-body {
+      padding: 1.3rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .art-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-bottom: .45rem;
+    }
+
+    .art-body p {
+      font-size: .8rem;
+      color: #5A4A28;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .art-foot {
+      padding: .8rem 1.3rem;
+      border-top: 1px solid rgba(26,18,8,.12);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .art-read {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--red2);
+      font-weight: 600;
+    }
+
+    .art-time {
+      font-size: .72rem;
+      color: var(--warm);
+    }
+
+    .cat-div {
+      background: var(--parchment);
+      grid-column: 1 / -1;
+      padding: .9rem 1.3rem;
+      border-top: 2px solid var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cat-div span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .cat-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(26,18,8,.15);
+    }
+
+    /* ==========================================================================
+       11. HISTORIC CITATION BLOCKQUOTE BANNER
+       ========================================================================== */
+    .quote-wrap {
+      background: var(--olive);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white' fill-opacity='0.04'%3E%3Cpath d='M20 0l4 8H16L20 0zm0 40l-4-8h8l-4 8zM0 20l8-4v8L0 20zm40 0l-8 4v-8l8 4z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .bq {
+      position: relative;
+      z-index: 1;
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      font-style: italic;
+      color: white;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    .bq::before {
+      content: '\275D';
+      font-size: 3rem;
+      color: rgba(255, 255, 255, .2);
+      display: block;
+      line-height: .9;
+      margin-bottom: .4rem;
+    }
+
+    .qa {
+      position: relative;
+      z-index: 1;
+      color: rgba(255, 255, 255, .45);
+      font-size: .8rem;
+      margin-top: 1.2rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       12. INTERACTION WRITER LAB (EDITORIAL DISPATCH)
+       ========================================================================== */
+    .editor-page {
+      background: var(--parchment);
+      min-height: 100vh;
+      padding: 3rem 2.5rem;
+    }
+
+    .editor-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .editor-top {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .editor-top h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: .3rem;
+    }
+
+    .editor-top p {
+      font-size: .85rem;
+      color: #5A4A28;
+    }
+
+    .field-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .field-group label {
+      display: block;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink2);
+      margin-bottom: .4rem;
+      font-weight: 600;
+    }
+
+    .field-input {
+      width: 100%;
+      background: white;
+      border: 1.5px solid rgba(26, 18, 8, .2);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .95rem;
+      padding: .6rem .9rem;
+      outline: none;
+      transition: border .2s;
+    }
+
+    .field-input:focus {
+      border-color: var(--red);
+    }
+
+    .field-select {
+      width: 100%;
+      background: white;
+      border: 1.5px solid rgba(26, 18, 8, .2);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .95rem;
+      padding: .6rem .9rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .field-textarea {
+      width: 100%;
+      background: white;
+      border: 1.5px solid rgba(26, 18, 8, .2);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .95rem;
+      padding: .8rem .9rem;
+      outline: none;
+      resize: vertical;
+      line-height: 1.7;
+      transition: border .2s;
+    }
+
+    .field-textarea:focus {
+      border-color: var(--red);
+    }
+
+    .pub-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-pub {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Source Serif 4', serif;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .7rem 2rem;
+      border: 2px solid var(--ink);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all .2s;
+    }
+
+    .btn-pub:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .pub-note {
+      font-size: .78rem;
+      color: #7A6A50;
+      font-style: italic;
+    }
+
+    .success-msg {
+      display: none;
+      background: #3D5224;
+      color: white;
+      padding: .8rem 1.2rem;
+      font-size: .85rem;
+      margin-top: 1rem;
+    }
+
+    /* ==========================================================================
+       13. PAYMENT HUB INTERFACE PAGE
+       ========================================================================== */
+    .pay-page {
+      background: var(--cream);
+      min-height: 100vh;
+    }
+
+    .pay-hero {
+      background: var(--ink2);
+      padding: 3rem 2.5rem;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .pay-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .pay-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--cream);
+      margin-bottom: .5rem;
+    }
+
+    .pay-hero p {
+      color: rgba(255, 255, 255, .55);
+      font-size: .95rem;
+      max-width: 520px;
+    }
+
+    .plans-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+    }
+
+    .onetime-wrap {
+      background: var(--parchment);
+      border: 2px solid var(--ink);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .onetime-wrap h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .5rem;
+    }
+
+    .onetime-wrap p {
+      font-size: .85rem;
+      color: #5A4A28;
+      margin-bottom: 1.2rem;
+    }
+
+    .onetime-amounts {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .ot-btn {
+      background: transparent;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .9rem;
+      padding: .5rem 1.2rem;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .ot-btn.active,
+    .ot-btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .ot-custom {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    .ot-in {
+      background: white;
+      border: 1.5px solid rgba(26, 18, 8, .2);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .9rem;
+      padding: .5rem .8rem;
+      width: 110px;
+      outline: none;
+    }
+
+    .ot-in:focus {
+      border-color: var(--red);
+    }
+
+    .ot-submit {
+      background: var(--red);
+      color: white;
+      font-family: 'Source Serif 4', serif;
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .55rem 1.4rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #planMsg {
+      display: none;
+      background: var(--olive);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-size: .9rem;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    /* ==========================================================================
+       14. MEDIA PHOTOS ENGINE
+       ========================================================================== */
+    .photos-page {
+      background: var(--cream);
+      min-height: 100vh;
+      padding: 3rem 2.5rem;
+    }
+
+    .photos-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2px;
+      background: var(--ink);
+    }
+
+    .photo-card {
+      background: var(--parchment);
+    }
+
+    .photo-thumb {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .photo-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-info {
+      padding: 1rem;
+    }
+
+    .photo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .92rem;
+      margin-bottom: .3rem;
+    }
+
+    .photo-credit {
+      font-size: .75rem;
+      color: #7A6A50;
+      margin-bottom: .6rem;
+      font-style: italic;
+    }
+
+    .photo-license {
+      display: inline-block;
+      background: var(--olive);
+      color: #D4E8C0;
+      font-size: .62rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .15rem .5rem;
+      margin-bottom: .7rem;
+    }
+
+    .photo-dl {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--cream);
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      text-decoration: none;
+      transition: background .2s;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .photo-dl:hover {
+      background: var(--red);
+    }
+
+    /* ==========================================================================
+       15. CUSTOM EDITORIAL READER INTERFACE (NYT EDITORIAL COLUMN)
+       ========================================================================== */
+    #readProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--red);
+      z-index: 9999;
+      transition: width .1s linear;
+      pointer-events: none;
+    }
+
+    .art-page {
+      background: var(--cream);
+      min-height: 100vh;
+      animation: artFadeIn .35s ease both;
+    }
+
+    @keyframes artFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #artReadingBar {
+      position: sticky;
+      top: 43px;
+      z-index: 190;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(26, 18, 8, .12);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      padding: .55rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    }
+
+    #artReadingBar.visible {
+      display: flex;
+    }
+
+    .arb-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .arb-back {
+      background: none;
+      border: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+    }
+
+    .arb-back::before {
+      content: '←';
+    }
+
+    .arb-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .88rem;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 380px;
+    }
+
+    .arb-right {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .arb-pct {
+      font-size: .68rem;
+      color: var(--warm);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      min-width: 3.5rem;
+      text-align: right;
+    }
+
+    .art-top-bar {
+      background: var(--parchment);
+      border-bottom: 1px solid rgba(26, 18, 8, .14);
+      padding: .65rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .art-top-back {
+      background: none;
+      border: none;
+      color: var(--red2);
+      font-family: 'Source Serif 4', serif;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .art-top-back::before {
+      content: '←';
+    }
+
+    .art-top-site {
+      color: rgba(26, 18, 8, .35);
+      font-family: 'Playfair Display', serif;
+      font-size: .85rem;
+      flex: 1;
+    }
+
+    .art-section-strip {
+      height: 4px;
+      width: 100%;
+    }
+
+    .sstrip-red { background: var(--red); }
+    .sstrip-olive { background: var(--olive); }
+    .sstrip-gold { background: var(--gold2); }
+    .sstrip-ink { background: #6B7F5E; }
+
+    .art-header-wrap {
+      background: var(--parchment);
+      border-bottom: 1px solid rgba(26, 18, 8, .1);
+      padding: 1.5rem 2rem 1.2rem;
+    }
+
+    .art-header-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .art-section-crumb {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .6rem;
+    }
+
+    .art-section-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .art-section-name {
+      font-family: 'Amiri', serif;
+      font-size: .73rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .sname-red { color: var(--red); }
+    .sname-olive { color: var(--olive); }
+    .sname-gold { color: var(--gold); }
+    .sname-ink { color: #6B7F5E; }
+
+    .sdot-red { background: var(--red); }
+    .sdot-olive { background: var(--olive); }
+    .sdot-gold { background: var(--gold2); }
+    .sdot-ink { background: #6B7F5E; }
+
+    .art-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.85rem, 4vw, 3.1rem);
+      line-height: 1.14;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: .6rem;
+      letter-spacing: -.01em;
+    }
+
+    .art-deck {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      color: #6A5840;
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: .9rem;
+      font-weight: 300;
+    }
+
+    .art-byline-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .4rem;
+      padding: .55rem 0;
+      border-top: 1px solid rgba(26, 18, 8, .1);
+      border-bottom: 1px solid rgba(26, 18, 8, .1);
+    }
+
+    .art-byline {
+      font-size: .8rem;
+      color: rgba(26, 18, 8, .45);
+    }
+
+    .art-byline strong {
+      color: var(--red2);
+      font-weight: 600;
+    }
+
+    .art-meta-pills {
+      display: flex;
+      gap: .9rem;
+      font-size: .72rem;
+      color: rgba(26, 18, 8, .35);
+      align-items: center;
+    }
+
+    .art-hero-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .art-hero-caption {
+      background: var(--parchment);
+      border-top: 1px solid rgba(26, 18, 8, .08);
+      padding: .4rem 2rem;
+      font-size: .7rem;
+      color: rgba(26, 18, 8, .4);
+      font-style: italic;
+    }
+
+    .art-body-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 1.8rem 2rem 4rem;
+    }
+
+    .art-lead {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      color: var(--ink);
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid rgba(26, 18, 8, .1);
+    }
+
+    .art-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 2rem 0 .6rem;
+      color: var(--ink2);
+      line-height: 1.3;
+    }
+
+    .art-text p {
+      margin-bottom: 1.2rem;
+      line-height: 1.75;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    .art-text blockquote {
+      margin: 1.8rem 0;
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--red);
+      font-style: italic;
+      color: #5A4A28;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .art-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(26, 18, 8, .1);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .art-tags-group {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    .art-tags-label {
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--warm);
+      font-weight: 600;
+    }
+
+    .art-tag-item {
+      background: rgba(26, 18, 8, .05);
+      color: var(--ink2);
+      font-size: .7rem;
+      padding: .2rem .6rem;
+    }
+
+    .art-share-group {
+      display: flex;
+      gap: .4rem;
+    }
+
+    .art-share-btn {
+      background: white;
+      border: 1px solid rgba(26, 18, 8, .15);
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: .72rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: .35rem .8rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+
+    .art-share-btn:hover {
+      background: var(--ink);
+      color: white;
+    }
+
+    .art-related {
+      background: var(--parchment);
+      border-top: 1px solid rgba(26, 18, 8, .1);
+      padding: 3rem 2rem;
+    }
+
+    .art-related-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .art-related-hd {
+      border-bottom: 1px solid rgba(26, 18, 8, .15);
+      padding-bottom: .5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .art-related-hd h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+    }
+
+    .art-related-hd span {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--warm);
+    }
+
+    .art-related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .art-rel-item {
+      display: flex;
+      gap: .9rem;
+      cursor: pointer;
+    }
+
+    .art-rel-thumb {
+      width: 90px;
+      height: 70px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .art-rel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .art-rel-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .art-rel-cat {
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red2);
+      font-weight: 600;
+      margin-bottom: .15rem;
+    }
+
+    .art-rel-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .art-rel-item:hover .art-rel-title {
+      color: var(--red2);
+    }
+
+    /* ==========================================================================
+       16. FOOTER SITE DIRECTORY MAP
+       ========================================================================== */
+    footer {
+      background: var(--ink);
+    }
+
+    .ft {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .ft-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin-bottom: .5rem;
+    }
+
+    .ft-tag {
+      color: rgba(255, 255, 255, .35);
+      font-size: .82rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .ft-col h4 {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .3);
+      margin-bottom: .9rem;
+    }
+
+    .ft-col ul {
+      list-style: none;
+    }
+
+    .ft-col li {
+      margin-bottom: .35rem;
+    }
+
+    .ft-col a,
+    .ft-col button {
+      color: rgba(255, 255, 255, .55);
+      font-size: .83rem;
+      text-decoration: none;
+      transition: color .2s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Source Serif 4', serif;
+      padding: 0;
+    }
+
+    .ft-col a:hover,
+    .ft-col button:hover {
+      color: var(--cream);
+    }
+
+    .ft-bot {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .ft-bot p {
+      color: rgba(255, 255, 255, .22);
+      font-size: .73rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="readProgress"></div>
+
+<nav>
+  <button class="nav-logo" onclick="showPage('home')">Stand for Gaza</button>
+  <ul class="nav-links">
+    <li><button onclick="showPage('home')" class="active" id="nav-home">Home</button></li>
+    <li><button onclick="showPage('articles')" id="nav-articles">Articles</button></li>
+    <li><button onclick="showPage('editor')" id="nav-editor">Write</button></li>
+  </ul>
+</nav>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <pattern id="t1" x="0" y="0" width="48" height="24" patternUnits="userSpaceOnUse">
+    <rect x="21" y="3" width="6" height="6" fill="#7A1515"/>
+    <rect x="18" y="6" width="12" height="2" fill="#7A1515"/>
+    <rect x="21" y="9" width="6" height="4" fill="#3D5224"/>
+    <rect x="19" y="5" width="2" height="5" fill="#A83020" opacity=".5"/>
+    <rect x="27" y="5" width="2" height="5" fill="#A83020" opacity=".5"/>
+    <rect x="17" y="3" width="2" height="2" fill="#8C6A1A"/>
+    <rect x="29" y="3" width="2" height="2" fill="#8C6A1A"/>
+    <rect x="17" y="17" width="2" height="2" fill="#8C6A1A"/>
+    <rect x="29" y="17" width="2" height="2" fill="#8C6A1A"/>
+  </pattern>
+</defs></svg>
+
+<div class="page active" id="page-home">
+  <div class="hero">
+    <img src="jeurselam.jpg" alt="Al-Quds Old City Road"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">A Critical Research Archive</p>
+      <h1>A history of Palestine told through <em>structures</em>, not myths.</h1>
+      <p class="hero-sub">Stand for Gaza is an independent collection of historical guides, legal analysis frameworks, and media source archives built for researchers.</p>
+      <div class="hero-cta">
+        <button class="btn-wh" onclick="showPage('articles')">Explore Archive</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="don-band">
+    <div class="don-l">
+      <p class="don-lbl">Crowdfund Infrastructure</p>
+      <h3 class="don-title">Help us maintain our digital hosting networks completely ad-free.</h3>
+      <div class="don-live-badge"><span class="don-live-dot"></span> Secure Safepay Connection Active</div>
+    </div>
+    <div class="don-c">
+      <span class="don-total-lbl">Total Funds Contributed</span>
+      <div class="don-num" id="donAmt">Rs. 0</div>
+      <p class="don-donors" id="donDonors">Synchronizing tracking ledgers...</p>
+      <div class="don-prog-wrap">
+        <div class="don-track"><div class="don-fill" id="donBar" style="width:0%"></div></div>
+        <div class="don-goal-row"><span>Goal: Rs. 1,000,000</span><span id="donPct">0%</span></div>
+      </div>
+    </div>
+    <div class="don-r">
+      <span class="don-lbl">Fast Secure Checkout</span>
+      <div class="don-presets">
+        <button class="don-pre active" onclick="selDon(2500, this)">Rs. 2,500</button>
+        <button class="don-pre" onclick="selDon(5000, this)">Rs. 5,000</button>
+        <button class="don-pre" onclick="selDon(10000, this)">Rs. 10,000</button>
+      </div>
+      <div class="don-row">
+        <input class="don-in" type="number" id="donIn" placeholder="Custom" min="1"/>
+        <button class="don-submit" id="donSubmitBtn" onclick="openDonationModal()">Donate Now</button>
+      </div>
+      <p class="don-note">Processed securely via multi-aggregator channels.</p>
+    </div>
+  </section>
+
+
+
+  <section class="sec">
+    <div class="sec-inner">
+      <div class="sec-hd"><h2 class="sec-title">Featured Investigations</h2><span class="sec-sub">Essential Reading Frameworks</span></div>
+      <div class="feat-grid">
+        <div class="feat-main" onclick="openArticle('settler-colonialism')">
+          <img src="download.jpg" alt="Featured headline thumb"/>
+          <div class="feat-ov"></div>
+          <div class="feat-body">
+            <span class="tag t-red">Theoretical Framework</span>
+            <h3 style="color:white;font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.2;margin-top:.4rem;margin-bottom:.4rem;">What Is Settler Colonialism and Why Does It Apply to Palestine?</h3>
+            <p style="color:rgba(255,255,255,.7);font-size:.88rem;max-width:540px;">Understanding the context of the region requires analyzing it through foundational structural realities, not simple regional border clashes.</p>
+          </div>
+        </div>
+        <div class="feat-side">
+          <div class="feat-item" onclick="openArticle('apartheid')">
+            <div class="feat-thumb"><img src="unnamed.jpg" alt="Apartheid thumb"/></div>
+            <div class="feat-ibody">
+              <div><span class="tag t-gold">International Law</span><h3>The Legal Definition of Apartheid</h3><p>A breakdown of Human Rights Watch and Amnesty findings mapping the legal matrices of civilian tracking lines.</p></div>
+              <p class="feat-meta">January 2024 · 11 min read</p>
+            </div>
+          </div>
+          <div class="feat-item" style="border-bottom:none;" onclick="openArticle('tatreez')">
+            <div class="feat-thumb"><img src="unnamed-1.jpg" alt=""/></div>
+              <div><span class="tag t-ink">Culture &amp; History</span><h3>Tatreez: Embroidery as Living Archive</h3><p>How cross-stitch configurations encode deep geography, ancestral maps, and resistance values.</p></div>
+              <p class="feat-meta">February 2024 · 7 min read</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-articles">
+  <div class="tatreez"><svg viewBox="0 0 1200 24"><rect width="1200" height="24" fill="url(#t1)"/></svg></div>
+  <div class="page-hero">
+    <div class="page-hero-inner" style="padding: 3rem 2.5rem 1rem;">
+      <p class="page-hero-eyebrow" style="font-family:'Amiri',serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);">Database Catalog</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem;">The Historical &amp; Legal Archive</h2>
+    </div>
+  </div>
+  
+  <section class="sec" style="background:var(--cream);padding-top:1rem;">
+    <div class="sec-inner">
+      <div class="art-grid">
+        <div class="cat-div"><span>Systematic Records</span><span class="cat-line"></span></div>
+        
+        <div class="art-card" onclick="openArticle('settler-colonialism')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Jerusalem%27s_Old_City_%281%29.jpg/400px-Jerusalem%27s_Old_City_%281%29.jpg" alt="Colonialism thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-red">Theory</span>
+            <h3>Settler Colonialism Analysis Framework</h3>
+            <p>Evaluating regional territorial reconfigurations and structural demographic policies utilizing standard sociological models.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">12 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('apartheid')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Hurva_Synagogue_and_Dome_of_the_Rock.jpg/400px-Hurva_Synagogue_and_Dome_of_the_Rock.jpg" alt="Apartheid grid thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-gold">International Law</span>
+            <h3>The Legal Matrices of Apartheid</h3>
+            <p>A global statutory breakdown parsing institutional travel restrictions and regional infrastructure segregation lines.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">11 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('tatreez')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Mosque_of_Omar_Jerusalem.jpg/400px-Mosque_of_Omar_Jerusalem.jpg" alt="Culture grid thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-ink">Culture</span>
+            <h3>Tatreez: The Stitching of Geography</h3>
+            <p>An investigation into how historic spatial identities and local floral symbols are encoded inside indigenous garments.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">7 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('nakba')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Old_city_of_Jerusalem_-_panoramio_%284%29.jpg/400px-Old_city_of_Jerusalem_-_panoramio_%284%29.jpg" alt="Nakba thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-red">History</span>
+            <h3>1948: The Mechanics of Fragmentation</h3>
+            <p>Tracing the calculated infrastructure re-zoning mandates that displacement patterns built post-1948.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">15 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('1967')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Jerusalem_-_Dome_of_the_Rock_-_0371.jpg/400px-Jerusalem_-_Dome_of_the_Rock_-_0371.jpg" alt="1967 thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-red">History</span>
+            <h3>1967: The Proliferation of Military Permit Systems</h3>
+            <p>How security loops and spatial boundaries introduced following the Six-Day War reshaped urban economic lines.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">9 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('gaza-blockade')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Israel_and_Palestine_map.svg/400px-Israel_and_Palestine_map.svg.png" alt="Gaza map thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-ink">Geopolitics</span>
+            <h3>The Enclosure of Access: Tracking Maritime Zones</h3>
+            <p>An analytical evaluation mapping electronic tracking limits and trade access protocols applied over coastal horizons.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">14 min</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-article">
+  <div class="art-page" id="artPageRoot">
+    <div id="artReadingBar">
+      <div class="arb-left">
+        <button class="arb-back" onclick="closeArticle()">Archive</button>
+        <span class="arb-title" id="arbTitle">Article Title Display</span>
+      </div>
+      <div class="arb-right">
+        <span class="arb-pct" id="arbPct">0% read</span>
+      </div>
+    </div>
+    <div class="art-top-bar">
+      <button class="art-top-back" onclick="closeArticle()">Back to Database</button>
+      <div class="art-top-divider">|</div>
+      <span class="art-top-site">Stand for Gaza  Research Portal</span>
+    </div>
+    <div class="art-section-strip" id="artSectionStrip"></div>
+    <div class="art-header-wrap">
+      <div class="art-header-inner">
+        <div class="art-section-crumb">
+          <span class="art-section-dot" id="artSectionDot"></span>
+          <span class="art-section-name" id="artSectionName">SECTION CATEGORY</span>
+        </div>
+        <h1 class="art-headline" id="artHeadline">Headline text payload</h1>
+        <p class="art-deck" id="artDeck">Deck summary descriptions populate here.</p>
+        <div class="art-byline-row">
+          <span class="art-byline">By <strong id="artAuthor">Stand for Gaza Collective</strong></span>
+          <div class="art-meta-pills"><span id="artDate">May 2026</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="art-body-wrap">
+      <p class="art-lead" id="artLead">Lead paragraph layout text content.</p>
+      <div class="art-text" id="artBody">Main text container streams.</div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-editor">
+  <div class="editor-page">
+    <div class="editor-inner">
+      <div class="editor-top"><h2>Archive Editorial Dispatch</h2><p>Contribute peer-reviewed historical guides or international legal source documentation drafts.</p></div>
+      <div class="field-group"><label>Article Header Title</label><input class="field-input" type="text" id="artTitle" placeholder="The structural parameters of..."/></div>
+      <div class="field-group"><label>Category Section Mapping</label><select class="field-select" id="artCat"><option value="History">Foundational History</option><option value="Law">International Law Frameworks</option><option value="Culture">Cultural Identity Preservation</option></select></div>
+      <div class="field-group"><label>Lead Paragraph Summary</label><input class="field-input" type="text" id="artDeckIn" placeholder="A brief contextual overview of the investigative report..."/></div>
+      <div class="field-group"><label>Core Document Text Payload (HTML Parsed)</label><textarea class="field-textarea" id="artContentText" rows="14" placeholder="Draft or paste your raw HTML content entries here..."></textarea></div>
+      <div class="pub-row">
+        <button class="btn-pub" onclick="publishCustomArticle()">Publish directly to Archive</button>
+        <span class="pub-note" id="pubNote"></span>
+      </div>
+      <div class="success-msg" id="successMsg"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="connect.js"></script>
+<script>
+let activeCheckoutAmount = 2500;
+
+const ARCHIVE_REGISTRY = {
+  'settler-colonialism': {
+    section: 'Foundational Theory', color: 'red', title: 'What Is Settler Colonialism and Why Does It Apply to Palestine?',
+    deck: 'Analyzing ongoing regional land distributions using standardized geopolitical criteria rather than isolated dispute arguments.',
+    lead: 'To understand the realities of Palestine requires stripping back administrative veneers and evaluating land management directly.',
+    body: '<h2>Ongoing Structures</h2><p>Settler colonialism is defined by an ongoing matrix of civilian management control loops where indigenous accessibility paradigms encounter external territorial structuring designs over extended generational timelines.</p>'
+  },
+  'apartheid': {
+    section: 'International Law', color: 'gold', title: 'The Legal Framework Mapping Apartheid Classifications',
+    deck: 'Reviewing statutory global criteria across Human Rights Watch frameworks evaluating regional physical verification checkpoints.',
+    lead: 'Statutory international descriptions rely on structural legal mechanisms to separate individual populations across fixed operational coordinates.',
+    body: '<h2>Legal Realities</h2><p>International conventions define apartheid based on systematic institutional separation designed specifically to control domestic travel, rights access lines, and zoning infrastructure parameters across contiguous areas.</p>'
+  },
+  'tatreez': {
+    section: 'Cultural Identity', color: 'ink', title: 'Tatreez: Palestinian Embroidery as Living Textile Archive',
+    deck: 'How geometric designs preserve spatial geography histories across generations.',
+    lead: 'Textile threads serve as visual documentation matrices recording historic city records and agricultural landscapes.',
+    body: '<h2>Geometric Archives</h2><p>Every pattern configuration matches precise village tracking records, combining botanical stitch indicators with historical thread structures that survived systemic displacement tracks.</p>'
+  },
+  'nakba': {
+    section: 'Foundational History', color: 'red', title: 'The Nakba: Displacement, Denial, and The Right of Return',
+    deck: 'Reviewing the events of 1948 and the structural mechanisms of fragmentation.',
+    lead: 'The displacement arrays built during 1948 established the tracking parameters defining contemporary refugee legal claims.',
+    body: '<h2>Structural Fragmentation</h2><p>Historical data records demonstrate that village re-zoning tracks implemented post-1948 weren\'t peripheral outcomes, but structural pillars designed to permanently reconfigure regional demographic matrices.</p>'
+  },
+  '1967': {
+    section: 'Foundational History', color: 'red', title: '1967: The Architecture of Military Governance',
+    deck: 'The implementation of modern administrative travel permit parameters.',
+    lead: 'The administrative parameters established post-1967 consolidated spatial constraints across urban spaces.',
+    body: '<h2>Permit System Implementations</h2><p>Military tracking commands built following the Six-Day War introduced systematic checkpoint lines, establishing structural control matrices over trade networks and daily civilian movement.</p>'
+  },
+  'gaza-blockade': {
+    section: 'Geopolitics Matrix', color: 'ink', title: 'The Enclosure of Access: Tracking Maritime Frontiers',
+    deck: 'An analytical evaluation mapping trade restrictions and infrastructure allocation patterns.',
+    lead: 'Evaluating peripheral containment lines requires assessing tracking layouts across maritime boundaries and freight logistics hubs.',
+    body: '<h2>Maritime Containment</h2><p>The systematic charting of trade monitoring vectors introduces automated regulatory lines, generating structural limits on domestic manufacturing capabilities and local mechanical acquisitions.</p>'
+  }
+};
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  
+  const targetPage = document.getElementById(`page-${pageId}`);
+  if (targetPage) targetPage.classList.add('active');
+  
+  const navBtn = document.getElementById(`nav-${pageId}`);
+  if (navBtn) navBtn.classList.add('active');
+  
+  window.scrollTo(0, 0);
+}
+
+function selDon(amount, contextButton) {
+  activeCheckoutAmount = amount;
+  const standardParentContainer = contextButton.parentElement;
+  standardParentContainer.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+  contextButton.classList.add('active');
+  
+  const correspondingInputField = standardParentContainer.nextElementSibling?.querySelector('input') 
+                                || standardParentContainer.querySelector('input');
+  if (correspondingInputField) correspondingInputField.value = '';
+}
+
+async function executeSecureServerCheckout(amountPayloadValue, triggerButtonElement) {
+  if (!amountPayloadValue || amountPayloadValue < 1) {
+    alert("Please assign a valid financial donation balance amount.");
+    return;
+  }
+
+  const baselineButtonText = triggerButtonElement.textContent;
+  triggerButtonElement.textContent = "Connecting Safepay Rails...";
+  triggerButtonElement.disabled = true;
+
+  try {
+    const explicitGatewayLink = await SafepayConnect.initializePayment(amountPayloadValue);
+    window.location.href = explicitGatewayLink;
+  } catch (error) {
+    console.error("Pipeline failure details:", error);
+    alert("Transaction session could not be verified. Gateway services are currently offline.");
+    triggerButtonElement.textContent = baselineButtonText;
+    triggerButtonElement.disabled = false;
+  }
+}
+
+function openDonationModal() {
+  const inputElement = document.getElementById('donIn');
+  const customEnteredValue = parseInt(inputElement.value, 10);
+  const finalCalculatedAmount = (customEnteredValue > 0) ? customEnteredValue : activeCheckoutAmount;
+  executeSecureServerCheckout(finalCalculatedAmount, document.getElementById('donSubmitBtn'));
+}
+
+function openSupportPageDonationModal() {
+  const inputElement = document.getElementById('otIn');
+  const customEnteredValue = parseInt(inputElement.value, 10);
+  const finalCalculatedAmount = (customEnteredValue > 0) ? customEnteredValue : activeCheckoutAmount;
+  executeSecureServerCheckout(finalCalculatedAmount, document.getElementById('otSupportSubmitBtn'));
+}
+
+async function synchronizeLiveLedgerData() {
+  try {
+    const freshMetrics = await SafepayConnect.getMetrics();
+    SafepayConnect.syncDOM(freshMetrics, 1000000);
+  } catch (error) {
+    console.log("Telemetry metrics fallback route applied.");
+  }
+}
+
+function openArticle(articleSlugId) {
+  const articleDataObject = ARCHIVE_REGISTRY[articleSlugId];
+  if (!articleDataObject) return;
+
+  document.getElementById('arbTitle').textContent = articleDataObject.title;
+  document.getElementById('artSectionName').textContent = articleDataObject.section;
+  document.getElementById('artHeadline').textContent = articleDataObject.title;
+  document.getElementById('artDeck').textContent = articleDataObject.deck;
+  document.getElementById('artLead').textContent = articleDataObject.lead;
+  document.getElementById('artBody').innerHTML = articleDataObject.body;
+
+  const dotIndicator = document.getElementById('artSectionDot');
+  dotIndicator.className = 'art-section-dot';
+  dotIndicator.classList.add(`sdot-${articleDataObject.color}`);
+
+  showPage('article');
+  
+  window.addEventListener('scroll', handleArticleProgressTracking);
+  document.getElementById('artReadingBar').classList.add('visible');
+}
+
+function closeArticle() {
+  window.removeEventListener('scroll', handleArticleProgressTracking);
+  document.getElementById('artReadingBar').classList.remove('visible');
+  document.getElementById('readProgress').style.width = '0%';
+  showPage('articles');
+}
+
+function handleArticleProgressTracking() {
+  const currentViewportTop = window.scrollY;
+  const maximumScrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  if (maximumScrollableHeight <= 0) return;
+  
+  const absolutePercentageScrolled = Math.min(100, Math.round((currentViewportTop / maximumScrollableHeight) * 100));
+  document.getElementById('readProgress').style.width = `${absolutePercentageScrolled}%`;
+  document.getElementById('arbPct').textContent = `${absolutePercentageScrolled}% read`;
+}
+
+function publishCustomArticle() {
+  const configuredTitleText = document.getElementById('artTitle').value.trim();
+  const configuredDeckText = document.getElementById('artDeckIn').value.trim();
+  const configuredBodyHTMLText = document.getElementById('artContentText').value.trim();
+  const configuredCategoryValue = document.getElementById('artCat').value;
+
+  if (!configuredTitleText || !configuredBodyHTMLText) {
+    alert("Please provide an article title and target body text content.");
+    return;
+  }
+
+  const pseudoRandomSlugString = `custom-${Date.now()}`;
+  ARCHIVE_REGISTRY[pseudoRandomSlugString] = {
+    section: configuredCategoryValue === "History" ? "Foundational History" : "International Law",
+    color: configuredCategoryValue === "History" ? "red" : "gold",
+    title: configuredTitleText,
+    deck: configuredDeckText || "Custom Community Contribution Dispatch.",
+    lead: "This article was submitted directly via the peer review writer portal interface.",
+    body: configuredBodyHTMLText
+  };
+
+  const dashboardNotificationBanner = document.getElementById('successMsg');
+  dashboardNotificationBanner.textContent = `✓ "${configuredTitleText}" was appended to your local browsing cache schema.`;
+  dashboardNotificationBanner.style.display = "block";
+  
+  setTimeout(() => { dashboardNotificationBanner.style.display = "none"; }, 5000);
+}
+
+
+const SafepayConnect = {
+  initializePayment: async function(amount) {
+    const response = await fetch(`${BACKEND_URL}/api/checkout/safepay`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount })
+    });
+    const result = await response.json();
+    if (result.status === 'success' && result.checkoutUrl) {
+      return result.checkoutUrl;
+    }
+    throw new Error('Failed to get checkout URL');
+  },
+
+  getMetrics: async function() {
+    const response = await fetch(`${BACKEND_URL}/api/donations`);
+    return await response.json();
+  },
+
+  syncDOM: function(data, goal) {
+    document.getElementById('donAmt').textContent = 'Rs. ' + data.total.toLocaleString();
+    document.getElementById('donDonors').textContent = `${data.donors.toLocaleString()} donors have contributed`;
+    const pct = Math.min(100, Math.round((data.total / goal) * 100));
+    document.getElementById('donBar').style.width = pct + '%';
+    document.getElementById('donPct').textContent = pct + '%';
+  }
+};
+
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  synchronizeLiveLedgerData();
+  setInterval(synchronizeLiveLedgerData, 15000);
+});
+</script>
+</body>
+</html>
