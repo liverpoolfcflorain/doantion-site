@@ -1683,6 +1683,140 @@
       color: rgba(255, 255, 255, .22);
       font-size: .73rem;
     }
+
+    /* ==========================================================================
+   17. MOBILE RESPONSIVENESS (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Global Spacing Reductions */
+  .sec {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Navigation Bar */
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nav-logo {
+    padding: 1rem 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    justify-content: center;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-links li a,
+  .nav-links li button {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.65rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 400px; /* Reduced height for smaller screens */
+  }
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem; /* Explicit fallback scale */
+  }
+
+  /* Donation Metrics Band */
+  .don-band {
+    grid-template-columns: 1fr; /* Stack horizontally */
+    text-align: center;
+  }
+  .don-l, 
+  .don-r {
+    border-right: none;
+    border-left: none;
+    padding: 1.5rem;
+  }
+  .don-l {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+  .don-r {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    align-items: center; /* Center the elements */
+  }
+  .don-presets, 
+  .don-row {
+    justify-content: center;
+  }
+  .don-live-badge {
+    justify-content: center;
+  }
+
+  /* Featured Investigations Grid */
+  .feat-grid {
+    grid-template-columns: 1fr; /* Stack the main feature and side features */
+  }
+  .feat-main {
+    min-height: 320px;
+  }
+  .feat-item {
+    flex-direction: column; /* Stack image and text in side items */
+  }
+  .feat-thumb {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Article Reading Page */
+  #artReadingBar {
+    padding: 0.55rem 1.5rem;
+  }
+  .arb-title {
+    max-width: 160px; /* Truncate title earlier on mobile */
+  }
+  .art-top-bar {
+    padding: 0.65rem 1.5rem;
+  }
+  .art-header-wrap {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  .art-body-wrap {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+  .art-headline {
+    font-size: 2rem;
+  }
+
+  /* Editor (Writer Lab) Page */
+  .editor-page {
+    padding: 2rem 1.5rem;
+  }
+  .pub-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-pub {
+    width: 100%;
+  }
+  .pub-note {
+    text-align: center;
+  }
+
+  /* Footer Map */
+  .ft {
+    grid-template-columns: 1fr; /* Stack footer columns */
+    gap: 2rem;
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .ft-bot {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.2rem 1.5rem;
+  }
+  }
+
+
   </style>
 </head>
 <body>
