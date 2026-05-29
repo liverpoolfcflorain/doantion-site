@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,16 +103,6 @@
     .nav-links li button.active {
       color: var(--cream);
       border-bottom: 2px solid var(--red);
-    }
-
-    .nav-support {
-      background: var(--red) !important;
-      color: white !important;
-      font-weight: 600 !important;
-    }
-
-    .nav-support:hover {
-      background: #9A2020 !important;
     }
 
     /* ==========================================================================
@@ -228,24 +219,6 @@
       color: white;
     }
 
-    .btn-gh {
-      background: transparent;
-      color: rgba(255, 255, 255, .8);
-      font-family: 'Source Serif 4', serif;
-      font-size: .78rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .65rem 1.6rem;
-      border: 2px solid rgba(255, 255, 255, .35);
-      transition: all .2s;
-      cursor: pointer;
-    }
-
-    .btn-gh:hover {
-      border-color: white;
-      color: white;
-    }
-
     /* ==========================================================================
        5. DONATION METRICS HUD BAND
        ========================================================================== */
@@ -301,18 +274,6 @@
       line-height: 1;
       transition: color .3s, transform .25s;
       display: inline-block;
-    }
-
-    .don-num.pop {
-      color: white;
-      transform: scale(1.1);
-    }
-
-    .don-donors {
-      font-size: .75rem;
-      color: rgba(255, 255, 255, .35);
-      margin-top: .3rem;
-      font-style: italic;
     }
 
     .don-prog-wrap {
@@ -393,14 +354,6 @@
       outline: none;
     }
 
-    .don-in:focus {
-      border-color: var(--gold2);
-    }
-
-    .don-in::placeholder {
-      color: rgba(255, 255, 255, .3);
-    }
-
     .don-submit {
       background: var(--red);
       color: white;
@@ -412,16 +365,6 @@
       border: none;
       cursor: pointer;
       font-weight: 600;
-    }
-
-    .don-submit:hover {
-      background: #9A2020;
-    }
-
-    .don-note {
-      font-size: .72rem;
-      color: rgba(255, 255, 255, .25);
-      font-style: italic;
     }
 
     .don-live-badge {
@@ -447,87 +390,6 @@
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: .4; }
-    }
-
-    /* ==========================================================================
-       6. INTEGRATED PAYMENT BRANDS ROW
-       ========================================================================== */
-    .pay-methods-band {
-      background: var(--ink);
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      border-bottom: 3px solid var(--red);
-    }
-
-    .pay-methods-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 1.2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .pay-methods-label {
-      font-family: 'Amiri', serif;
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .3);
-      white-space: nowrap;
-    }
-
-    .pay-methods-grid {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      flex: 1;
-    }
-
-    .pay-method {
-      display: flex;
-      align-items: center;
-      gap: .55rem;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .1);
-      padding: .45rem .75rem;
-      text-decoration: none;
-      transition: background .2s, border .2s;
-      cursor: pointer;
-    }
-
-    .pay-method:hover {
-      background: rgba(255, 255, 255, .1);
-      border-color: rgba(255, 255, 255, .25);
-    }
-
-    .pay-method-icon {
-      width: 34px;
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      border-radius: 3px;
-    }
-
-    .pay-method-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pay-method-name {
-      font-size: .78rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, .8);
-      line-height: 1.2;
-      font-family: 'Source Serif 4', serif;
-    }
-
-    .pay-method-sub {
-      font-size: .65rem;
-      color: rgba(255, 255, 255, .3);
-      letter-spacing: .04em;
     }
 
     /* ==========================================================================
@@ -794,55 +656,6 @@
     }
 
     /* ==========================================================================
-       11. HISTORIC CITATION BLOCKQUOTE BANNER
-       ========================================================================== */
-    .quote-wrap {
-      background: var(--olive);
-      padding: 3.5rem 2.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .quote-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white' fill-opacity='0.04'%3E%3Cpath d='M20 0l4 8H16L20 0zm0 40l-4-8h8l-4 8zM0 20l8-4v8L0 20zm40 0l-8 4v-8l8 4z'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .bq {
-      position: relative;
-      z-index: 1;
-      font-family: 'Amiri', serif;
-      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
-      font-style: italic;
-      color: white;
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.55;
-    }
-
-    .bq::before {
-      content: '\275D';
-      font-size: 3rem;
-      color: rgba(255, 255, 255, .2);
-      display: block;
-      line-height: .9;
-      margin-bottom: .4rem;
-    }
-
-    .qa {
-      position: relative;
-      z-index: 1;
-      color: rgba(255, 255, 255, .45);
-      font-size: .8rem;
-      margin-top: 1.2rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    /* ==========================================================================
        12. INTERACTION WRITER LAB (EDITORIAL DISPATCH)
        ========================================================================== */
     .editor-page {
@@ -960,12 +773,6 @@
       border-color: var(--red);
     }
 
-    .pub-note {
-      font-size: .78rem;
-      color: #7A6A50;
-      font-style: italic;
-    }
-
     .success-msg {
       display: none;
       background: #3D5224;
@@ -976,213 +783,7 @@
     }
 
     /* ==========================================================================
-       13. PAYMENT HUB INTERFACE PAGE
-       ========================================================================== */
-    .pay-page {
-      background: var(--cream);
-      min-height: 100vh;
-    }
-
-    .pay-hero {
-      background: var(--ink2);
-      padding: 3rem 2.5rem;
-      border-bottom: 3px solid var(--red);
-    }
-
-    .pay-hero-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    .pay-hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--cream);
-      margin-bottom: .5rem;
-    }
-
-    .pay-hero p {
-      color: rgba(255, 255, 255, .55);
-      font-size: .95rem;
-      max-width: 520px;
-    }
-
-    .plans-wrap {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 3rem 2.5rem;
-    }
-
-    .onetime-wrap {
-      background: var(--parchment);
-      border: 2px solid var(--ink);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .onetime-wrap h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: .5rem;
-    }
-
-    .onetime-wrap p {
-      font-size: .85rem;
-      color: #5A4A28;
-      margin-bottom: 1.2rem;
-    }
-
-    .onetime-amounts {
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .ot-btn {
-      background: transparent;
-      border: 1.5px solid var(--ink);
-      color: var(--ink);
-      font-family: 'Source Serif 4', serif;
-      font-size: .9rem;
-      padding: .5rem 1.2rem;
-      cursor: pointer;
-      transition: all .2s;
-    }
-
-    .ot-btn.active,
-    .ot-btn:hover {
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .ot-custom {
-      display: flex;
-      gap: .5rem;
-      align-items: center;
-    }
-
-    .ot-in {
-      background: white;
-      border: 1.5px solid rgba(26, 18, 8, .2);
-      color: var(--ink);
-      font-family: 'Source Serif 4', serif;
-      font-size: .9rem;
-      padding: .5rem .8rem;
-      width: 110px;
-      outline: none;
-    }
-
-    .ot-in:focus {
-      border-color: var(--red);
-    }
-
-    .ot-submit {
-      background: var(--red);
-      color: white;
-      font-family: 'Source Serif 4', serif;
-      font-size: .8rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .55rem 1.4rem;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    #planMsg {
-      display: none;
-      background: var(--olive);
-      color: white;
-      padding: 1rem 1.5rem;
-      font-size: .9rem;
-      font-family: 'Source Serif 4', serif;
-    }
-
-    /* ==========================================================================
-       14. MEDIA PHOTOS ENGINE
-       ========================================================================== */
-    .photos-page {
-      background: var(--cream);
-      min-height: 100vh;
-      padding: 3rem 2.5rem;
-    }
-
-    .photos-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    .photos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
-      background: var(--ink);
-    }
-
-    .photo-card {
-      background: var(--parchment);
-    }
-
-    .photo-thumb {
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .photo-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-info {
-      padding: 1rem;
-    }
-
-    .photo-title {
-      font-family: 'Playfair Display', serif;
-      font-size: .92rem;
-      margin-bottom: .3rem;
-    }
-
-    .photo-credit {
-      font-size: .75rem;
-      color: #7A6A50;
-      margin-bottom: .6rem;
-      font-style: italic;
-    }
-
-    .photo-license {
-      display: inline-block;
-      background: var(--olive);
-      color: #D4E8C0;
-      font-size: .62rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .15rem .5rem;
-      margin-bottom: .7rem;
-    }
-
-    .photo-dl {
-      display: inline-block;
-      background: var(--ink);
-      color: var(--cream);
-      font-size: .72rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .35rem .9rem;
-      text-decoration: none;
-      transition: background .2s;
-      font-family: 'Source Serif 4', serif;
-    }
-
-    .photo-dl:hover {
-      background: var(--red);
-    }
-
-    /* ==========================================================================
-       15. CUSTOM EDITORIAL READER INTERFACE (NYT EDITORIAL COLUMN)
+       15. CUSTOM EDITORIAL READER INTERFACE
        ========================================================================== */
     #readProgress {
       position: fixed;
@@ -1408,20 +1009,6 @@
       align-items: center;
     }
 
-    .art-hero-wrap {
-      position: relative;
-      width: 100%;
-    }
-
-    .art-hero-caption {
-      background: var(--parchment);
-      border-top: 1px solid rgba(26, 18, 8, .08);
-      padding: .4rem 2rem;
-      font-size: .7rem;
-      color: rgba(26, 18, 8, .4);
-      font-style: italic;
-    }
-
     .art-body-wrap {
       max-width: 740px;
       margin: 0 auto;
@@ -1454,6 +1041,16 @@
       font-size: 1.02rem;
     }
 
+    .art-text ul {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      color: var(--ink);
+    }
+    
+    .art-text li {
+      margin-bottom: 0.5rem;
+    }
+
     .art-text blockquote {
       margin: 1.8rem 0;
       padding-left: 1.2rem;
@@ -1464,359 +1061,37 @@
       line-height: 1.6;
     }
 
-    .art-bottom-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(26, 18, 8, .1);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .art-tags-group {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      flex-wrap: wrap;
-    }
-
-    .art-tags-label {
-      font-size: .68rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--warm);
-      font-weight: 600;
-    }
-
-    .art-tag-item {
-      background: rgba(26, 18, 8, .05);
-      color: var(--ink2);
-      font-size: .7rem;
-      padding: .2rem .6rem;
-    }
-
-    .art-share-group {
-      display: flex;
-      gap: .4rem;
-    }
-
-    .art-share-btn {
-      background: white;
-      border: 1px solid rgba(26, 18, 8, .15);
-      color: var(--ink);
-      font-family: 'Source Serif 4', serif;
-      font-size: .72rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: .35rem .8rem;
-      cursor: pointer;
-      transition: all .15s;
-    }
-
-    .art-share-btn:hover {
-      background: var(--ink);
-      color: white;
-    }
-
-    .art-related {
-      background: var(--parchment);
-      border-top: 1px solid rgba(26, 18, 8, .1);
-      padding: 3rem 2rem;
-    }
-
-    .art-related-inner {
-      max-width: 740px;
-      margin: 0 auto;
-    }
-
-    .art-related-hd {
-      border-bottom: 1px solid rgba(26, 18, 8, .15);
-      padding-bottom: .5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .art-related-hd h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-    }
-
-    .art-related-hd span {
-      font-size: .7rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--warm);
-    }
-
-    .art-related-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .art-rel-item {
-      display: flex;
-      gap: .9rem;
-      cursor: pointer;
-    }
-
-    .art-rel-thumb {
-      width: 90px;
-      height: 70px;
-      flex-shrink: 0;
-      overflow: hidden;
-      background: var(--ink);
-    }
-
-    .art-rel-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .art-rel-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .art-rel-cat {
-      font-size: .65rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--red2);
-      font-weight: 600;
-      margin-bottom: .15rem;
-    }
-
-    .art-rel-title {
-      font-family: 'Playfair Display', serif;
-      font-size: .9rem;
-      line-height: 1.25;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .art-rel-item:hover .art-rel-title {
-      color: var(--red2);
-    }
-
-    /* ==========================================================================
-       16. FOOTER SITE DIRECTORY MAP
-       ========================================================================== */
-    footer {
-      background: var(--ink);
-    }
-
-    .ft {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 3rem 2.5rem 2rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 2.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .ft-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--cream);
-      margin-bottom: .5rem;
-    }
-
-    .ft-tag {
-      color: rgba(255, 255, 255, .35);
-      font-size: .82rem;
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    .ft-col h4 {
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .3);
-      margin-bottom: .9rem;
-    }
-
-    .ft-col ul {
-      list-style: none;
-    }
-
-    .ft-col li {
-      margin-bottom: .35rem;
-    }
-
-    .ft-col a,
-    .ft-col button {
-      color: rgba(255, 255, 255, .55);
-      font-size: .83rem;
-      text-decoration: none;
-      transition: color .2s;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Source Serif 4', serif;
-      padding: 0;
-    }
-
-    .ft-col a:hover,
-    .ft-col button:hover {
-      color: var(--cream);
-    }
-
-    .ft-bot {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 1.2rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .ft-bot p {
-      color: rgba(255, 255, 255, .22);
-      font-size: .73rem;
-    }
-
     /* ==========================================================================
    17. MOBILE RESPONSIVENESS (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Global Spacing Reductions */
-  .sec {
-    padding: 2rem 1.5rem;
-  }
-
-  /* Navigation Bar */
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .nav-logo {
-    padding: 1rem 1.5rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-    justify-content: center;
-  }
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .nav-links li a,
-  .nav-links li button {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.65rem;
-  }
-
-  /* Hero Section */
-  .hero {
-    height: 400px; /* Reduced height for smaller screens */
-  }
-  .hero-content {
-    padding: 2rem 1.5rem;
-  }
-  .hero h1 {
-    font-size: 2.2rem; /* Explicit fallback scale */
-  }
-
-  /* Donation Metrics Band */
-  .don-band {
-    grid-template-columns: 1fr; /* Stack horizontally */
-    text-align: center;
-  }
-  .don-l, 
-  .don-r {
-    border-right: none;
-    border-left: none;
-    padding: 1.5rem;
-  }
-  .don-l {
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-  }
-  .don-r {
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    align-items: center; /* Center the elements */
-  }
-  .don-presets, 
-  .don-row {
-    justify-content: center;
-  }
-  .don-live-badge {
-    justify-content: center;
-  }
-
-  /* Featured Investigations Grid */
-  .feat-grid {
-    grid-template-columns: 1fr; /* Stack the main feature and side features */
-  }
-  .feat-main {
-    min-height: 320px;
-  }
-  .feat-item {
-    flex-direction: column; /* Stack image and text in side items */
-  }
-  .feat-thumb {
-    width: 100%;
-    height: 180px;
-  }
-
-  /* Article Reading Page */
-  #artReadingBar {
-    padding: 0.55rem 1.5rem;
-  }
-  .arb-title {
-    max-width: 160px; /* Truncate title earlier on mobile */
-  }
-  .art-top-bar {
-    padding: 0.65rem 1.5rem;
-  }
-  .art-header-wrap {
-    padding: 1.5rem 1.5rem 1rem;
-  }
-  .art-body-wrap {
-    padding: 1.5rem 1.5rem 3rem;
-  }
-  .art-headline {
-    font-size: 2rem;
-  }
-
-  /* Editor (Writer Lab) Page */
-  .editor-page {
-    padding: 2rem 1.5rem;
-  }
-  .pub-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .btn-pub {
-    width: 100%;
-  }
-  .pub-note {
-    text-align: center;
-  }
-
-  /* Footer Map */
-  .ft {
-    grid-template-columns: 1fr; /* Stack footer columns */
-    gap: 2rem;
-    padding: 2.5rem 1.5rem 2rem;
-  }
-  .ft-bot {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    padding: 1.2rem 1.5rem;
-  }
-  }
-
-
+  .sec { padding: 2rem 1.5rem; }
+  nav { flex-direction: column; align-items: stretch; }
+  .nav-logo { padding: 1rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, .1); justify-content: center; }
+  .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
+  .nav-links li a, .nav-links li button { padding: 0.7rem 0.9rem; font-size: 0.65rem; }
+  .hero { height: 400px; }
+  .hero-content { padding: 2rem 1.5rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .don-band { grid-template-columns: 1fr; text-align: center; }
+  .don-l, .don-r { border-right: none; border-left: none; padding: 1.5rem; }
+  .don-l { border-bottom: 1px solid rgba(255, 255, 255, .1); }
+  .don-r { border-top: 1px solid rgba(255, 255, 255, .1); align-items: center; }
+  .don-presets, .don-row, .don-live-badge { justify-content: center; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .feat-main { min-height: 320px; }
+  .feat-item { flex-direction: column; }
+  .feat-thumb { width: 100%; height: 180px; }
+  #artReadingBar { padding: 0.55rem 1.5rem; }
+  .arb-title { max-width: 160px; }
+  .art-top-bar { padding: 0.65rem 1.5rem; }
+  .art-header-wrap { padding: 1.5rem 1.5rem 1rem; }
+  .art-body-wrap { padding: 1.5rem 1.5rem 3rem; }
+  .art-headline { font-size: 2rem; }
+  .editor-page { padding: 2rem 1.5rem; }
+  .pub-row { flex-direction: column; align-items: stretch; }
+  .btn-pub { width: 100%; }
+}
   </style>
 </head>
 <body>
@@ -1886,11 +1161,8 @@
         <input class="don-in" type="number" id="donIn" placeholder="Custom" min="1"/>
         <button class="don-submit" id="donSubmitBtn" onclick="openDonationModal()">Donate Now</button>
       </div>
-      <p class="don-note">Processed securely via multi-aggregator channels.</p>
     </div>
   </section>
-
-
 
   <section class="sec">
     <div class="sec-inner">
@@ -1906,17 +1178,17 @@
           </div>
         </div>
         <div class="feat-side">
-          <div class="feat-item" onclick="openArticle('apartheid')">
-            <div class="feat-thumb"><img src="unnamed.jpg" alt="Apartheid thumb"/></div>
+          <div class="feat-item" onclick="openArticle('palestinian-crisis')">
+            <div class="feat-thumb"><img src="unnamed.jpg" alt="Crisis thumb"/></div>
             <div class="feat-ibody">
-              <div><span class="tag t-gold">International Law</span><h3>The Legal Definition of Apartheid</h3><p>A breakdown of Human Rights Watch and Amnesty findings mapping the legal matrices of civilian tracking lines.</p></div>
-              <p class="feat-meta">January 2024 · 11 min read</p>
+              <div><span class="tag t-red">Humanitarian Crisis</span><h3>Palestinian Crisis in 2026—A Human Toll That Cannot Be Ignored</h3><p>Since the profound escalation of the conflict, the human cost has reached unprecedented and devastating levels.</p></div>
+              <p class="feat-meta">May 2026 · 11 min read</p>
             </div>
           </div>
-          <div class="feat-item" style="border-bottom:none;" onclick="openArticle('tatreez')">
-            <div class="feat-thumb"><img src="unnamed-1.jpg" alt=""/></div>
-              <div><span class="tag t-ink">Culture &amp; History</span><h3>Tatreez: Embroidery as Living Archive</h3><p>How cross-stitch configurations encode deep geography, ancestral maps, and resistance values.</p></div>
-              <p class="feat-meta">February 2024 · 7 min read</p>
+          <div class="feat-item" style="border-bottom:none;" onclick="openArticle('life-under-siege')">
+            <div class="feat-thumb"><img src="unnamed-1.jpg" alt="Siege thumb"/></div>
+              <div><span class="tag t-gold">Daily Realities</span><h3>Life Under Siege—Palestinian Families Struggle for Survival</h3><p>For many Palestinians, the overarching geopolitical conflict is secondary to the immediate battle for basic needs.</p></div>
+              <p class="feat-meta">May 2026 · 7 min read</p>
             </div>
           </div>
         </div>
@@ -1949,54 +1221,64 @@
           <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">12 min</span></div>
         </div>
 
-        <div class="art-card" onclick="openArticle('apartheid')">
-          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Hurva_Synagogue_and_Dome_of_the_Rock.jpg/400px-Hurva_Synagogue_and_Dome_of_the_Rock.jpg" alt="Apartheid grid thumb"/></div>
+        <div class="art-card" onclick="openArticle('palestinian-crisis')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Hurva_Synagogue_and_Dome_of_the_Rock.jpg/400px-Hurva_Synagogue_and_Dome_of_the_Rock.jpg" alt="Crisis thumb"/></div>
           <div class="art-body">
-            <span class="tag t-gold">International Law</span>
-            <h3>The Legal Matrices of Apartheid</h3>
-            <p>A global statutory breakdown parsing institutional travel restrictions and regional infrastructure segregation lines.</p>
+            <span class="tag t-red">Humanitarian Crisis</span>
+            <h3>Palestinian Crisis in 2026—A Human Toll</h3>
+            <p>The human cost has reached unprecedented and devastating levels. A breakdown of the catastrophic human tragedy unfolding.</p>
           </div>
           <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">11 min</span></div>
         </div>
 
-        <div class="art-card" onclick="openArticle('tatreez')">
-          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Mosque_of_Omar_Jerusalem.jpg/400px-Mosque_of_Omar_Jerusalem.jpg" alt="Culture grid thumb"/></div>
+        <div class="art-card" onclick="openArticle('life-under-siege')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Mosque_of_Omar_Jerusalem.jpg/400px-Mosque_of_Omar_Jerusalem.jpg" alt="Siege thumb"/></div>
           <div class="art-body">
-            <span class="tag t-ink">Culture</span>
-            <h3>Tatreez: The Stitching of Geography</h3>
-            <p>An investigation into how historic spatial identities and local floral symbols are encoded inside indigenous garments.</p>
+            <span class="tag t-gold">Daily Realities</span>
+            <h3>Life Under Siege</h3>
+            <p>A tightening siege and severely degraded infrastructure have transformed routine life into a relentless pursuit of essential resources.</p>
           </div>
-          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">7 min</span></div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">8 min</span></div>
         </div>
 
-        <div class="art-card" onclick="openArticle('nakba')">
-          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Old_city_of_Jerusalem_-_panoramio_%284%29.jpg/400px-Old_city_of_Jerusalem_-_panoramio_%284%29.jpg" alt="Nakba thumb"/></div>
+        <div class="art-card" onclick="openArticle('invisible-wounds')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Old_city_of_Jerusalem_-_panoramio_%284%29.jpg/400px-Old_city_of_Jerusalem_-_panoramio_%284%29.jpg" alt="Children thumb"/></div>
           <div class="art-body">
-            <span class="tag t-red">History</span>
-            <h3>1948: The Mechanics of Fragmentation</h3>
-            <p>Tracing the calculated infrastructure re-zoning mandates that displacement patterns built post-1948.</p>
+            <span class="tag t-olive">Child Welfare</span>
+            <h3>The Invisible Wounds</h3>
+            <p>Thousands of Palestinian minors have perished, but the millions who survive are bearing the heavy, invisible wounds of deep trauma.</p>
           </div>
-          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">15 min</span></div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">10 min</span></div>
         </div>
 
-        <div class="art-card" onclick="openArticle('1967')">
-          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Jerusalem_-_Dome_of_the_Rock_-_0371.jpg/400px-Jerusalem_-_Dome_of_the_Rock_-_0371.jpg" alt="1967 thumb"/></div>
+        <div class="art-card" onclick="openArticle('displacement-despair')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Jerusalem_-_Dome_of_the_Rock_-_0371.jpg/400px-Jerusalem_-_Dome_of_the_Rock_-_0371.jpg" alt="Refugee thumb"/></div>
           <div class="art-body">
-            <span class="tag t-red">History</span>
-            <h3>1967: The Proliferation of Military Permit Systems</h3>
-            <p>How security loops and spatial boundaries introduced following the Six-Day War reshaped urban economic lines.</p>
+            <span class="tag t-ink">Refugee Crisis</span>
+            <h3>Displacement and Despair</h3>
+            <p>The Palestinian refugee crisis remains one of the longest unresolved displacement crises in modern history, shaped by decades of conflict.</p>
           </div>
           <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">9 min</span></div>
         </div>
 
-        <div class="art-card" onclick="openArticle('gaza-blockade')">
-          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Israel_and_Palestine_map.svg/400px-Israel_and_Palestine_map.svg.png" alt="Gaza map thumb"/></div>
+        <div class="art-card" onclick="openArticle('barriers-survival')">
+          <div class="art-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Israel_and_Palestine_map.svg/400px-Israel_and_Palestine_map.svg.png" alt="Barriers thumb"/></div>
           <div class="art-body">
-            <span class="tag t-ink">Geopolitics</span>
-            <h3>The Enclosure of Access: Tracking Maritime Zones</h3>
-            <p>An analytical evaluation mapping electronic tracking limits and trade access protocols applied over coastal horizons.</p>
+            <span class="tag t-red">Human Rights</span>
+            <h3>Barriers to Survival</h3>
+            <p>An elaborate, pervasive system of physical and bureaucratic restrictions systematically choke movement and access to basic human rights.</p>
           </div>
           <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">14 min</span></div>
+        </div>
+
+        <div class="art-card" onclick="openArticle('beyond-aid')">
+          <div class="art-img"><img src="jeurselam.jpg" alt="Global Support thumb"/></div>
+          <div class="art-body">
+            <span class="tag t-gold">Global Support</span>
+            <h3>Beyond Aid</h3>
+            <p>While aid keeps people alive, it cannot solve root causes. How the international community can foster true systemic accountability.</p>
+          </div>
+          <div class="art-foot"><span class="art-read">Read Guide →</span><span class="art-time">12 min</span></div>
         </div>
       </div>
     </div>
@@ -2017,7 +1299,7 @@
     <div class="art-top-bar">
       <button class="art-top-back" onclick="closeArticle()">Back to Database</button>
       <div class="art-top-divider">|</div>
-      <span class="art-top-site">Stand for Gaza  Research Portal</span>
+      <span class="art-top-site">Stand for Gaza Research Portal</span>
     </div>
     <div class="art-section-strip" id="artSectionStrip"></div>
     <div class="art-header-wrap">
@@ -2058,10 +1340,6 @@
   </div>
 </div>
 
-
-
-
-
 <script src="connect.js"></script>
 <script>
 let activeCheckoutAmount = 2500;
@@ -2071,37 +1349,43 @@ const ARCHIVE_REGISTRY = {
     section: 'Foundational Theory', color: 'red', title: 'What Is Settler Colonialism and Why Does It Apply to Palestine?',
     deck: 'Analyzing ongoing regional land distributions using standardized geopolitical criteria rather than isolated dispute arguments.',
     lead: 'To understand the realities of Palestine requires stripping back administrative veneers and evaluating land management directly.',
-    body: '<h2>Ongoing Structures</h2><p>Settler colonialism is defined by an ongoing matrix of civilian management control loops where indigenous accessibility paradigms encounter external territorial structuring designs over extended generational timelines.</p>'
+    body: `<h2>Ongoing Structures</h2><p>Settler colonialism is defined by an ongoing matrix of civilian management control loops where indigenous accessibility paradigms encounter external territorial structuring designs over extended generational timelines.</p>`
   },
-  'apartheid': {
-    section: 'International Law', color: 'gold', title: 'The Legal Framework Mapping Apartheid Classifications',
-    deck: 'Reviewing statutory global criteria across Human Rights Watch frameworks evaluating regional physical verification checkpoints.',
-    lead: 'Statutory international descriptions rely on structural legal mechanisms to separate individual populations across fixed operational coordinates.',
-    body: '<h2>Legal Realities</h2><p>International conventions define apartheid based on systematic institutional separation designed specifically to control domestic travel, rights access lines, and zoning infrastructure parameters across contiguous areas.</p>'
+  'palestinian-crisis': {
+    section: 'Humanitarian Crisis', color: 'red', title: 'Palestinian Crisis in 2026—A Human Toll That Cannot Be Ignored',
+    deck: 'Since the profound escalation of the conflict in late 2023, the human cost in the Palestinian territories has reached unprecedented and devastating levels.',
+    lead: 'More than 72,600 Palestinians have lost their lives, the vast majority being civilians, including tens of thousands of women and children.',
+    body: `<h2>A Fractured Landscape</h2><p>In the Gaza Strip, the humanitarian landscape has been entirely fractured. Nearly all of the enclave’s 2.1 million residents have been subjected to multiple waves of forced displacement. Fleeing from one designated "safe zone" to another, families now find themselves living in sprawling, makeshift tent cities that lack the most basic municipal infrastructure. Hospitals, once the bedrock of the community, have been reduced to triage centers functioning without reliable electricity, critical medicines, or sterile supplies.</p><blockquote>“A child’s laughter has been entirely replaced by the persistent hum of drones and the silence of shock,” shared a veteran health worker operating in southern Gaza. “We are not just treating physical wounds; we are treating a population that is cold, hungry, and terrified of what tomorrow will bring.”</blockquote><p>The crisis, however, extends far beyond Gaza. In the West Bank, Palestinian families live under a compounding state of fear and instability. Recent reports document a surge in injuries, fatalities, and forced displacements driven by a sharp increase in settler violence and intensified military raids. For millions, the simple act of existing on their land has become fraught with daily peril.</p><p>International advocacy groups and human rights organizations are sounding the alarm with increasing desperation. They stress that the crisis is not merely a political dispute, but a catastrophic human tragedy that demands immediate global intervention, the unrestricted flow of humanitarian aid, and an unwavering commitment to protecting civilian life under international law.</p>`
   },
-  'tatreez': {
-    section: 'Cultural Identity', color: 'ink', title: 'Tatreez: Palestinian Embroidery as Living Textile Archive',
-    deck: 'How geometric designs preserve spatial geography histories across generations.',
-    lead: 'Textile threads serve as visual documentation matrices recording historic city records and agricultural landscapes.',
-    body: '<h2>Geometric Archives</h2><p>Every pattern configuration matches precise village tracking records, combining botanical stitch indicators with historical thread structures that survived systemic displacement tracks.</p>'
+  'life-under-siege': {
+    section: 'Daily Realities', color: 'gold', title: 'Life Under Siege—Palestinian Families Struggle for Survival',
+    deck: 'For many Palestinians, the overarching geopolitical conflict is secondary to a much more immediate battle: the daily, exhausting struggle for basic survival.',
+    lead: 'A tightening siege and severely degraded infrastructure have transformed routine life into a relentless pursuit of essential resources.',
+    body: `<h2>The Collapse of Basic Services</h2><p>The collapse of municipal services has left hundreds of thousands without access to clean, running water. Families are often forced to rely on contaminated agricultural wells or wait in hours-long queues for a meager ration of desalinated water. Electricity, when available at all, is entirely unreliable. Many neighborhoods experience blackouts lasting several days, plunging homes into darkness, spoiling what little food families manage to secure, and cutting off crucial communication with the outside world.</p><p>The psychological burden on parents is particularly agonizing. They are tasked with shielding their children from the horrors of their reality while secretly grappling with their own anxieties about food security, physical safety, and an increasingly bleak future.</p><ul><li><strong>Food Insecurity:</strong> Basic staples like flour, rice, and cooking oil are either entirely unavailable or priced far beyond the reach of the average family due to hyperinflation.</li><li><strong>Medical Collapse:</strong> Chronic illness sufferers—those needing dialysis, insulin, or cancer treatments—are dying not from the conflict directly, but from the collapse of the medical supply chain.</li><li><strong>Economic Paralysis:</strong> With workplaces destroyed and borders sealed, unemployment has skyrocketed, leaving families wholly dependent on fluctuating international aid.</li></ul><blockquote>“This is not the sanitized war zone you see on international television—this is our living room, our kitchen, our children's bedroom,” a resident of a West Bank refugee camp explained. “We are forced to normalize living with trauma every single day, yet we refuse to let go of the hope for a peaceful, ordinary life.”</blockquote>`
   },
-  'nakba': {
-    section: 'Foundational History', color: 'red', title: 'The Nakba: Displacement, Denial, and The Right of Return',
-    deck: 'Reviewing the events of 1948 and the structural mechanisms of fragmentation.',
-    lead: 'The displacement arrays built during 1948 established the tracking parameters defining contemporary refugee legal claims.',
-    body: '<h2>Structural Fragmentation</h2><p>Historical data records demonstrate that village re-zoning tracks implemented post-1948 weren\'t peripheral outcomes, but structural pillars designed to permanently reconfigure regional demographic matrices.</p>'
+  'invisible-wounds': {
+    section: 'Child Welfare', color: 'olive', title: 'The Invisible Wounds—Impact of Conflict on Palestinian Children',
+    deck: 'While the physical destruction of the Palestinian territories is visible from satellite imagery, the most profound damage is occurring out of sight.',
+    lead: 'Thousands of Palestinian minors have perished, but the millions who survive are bearing the heavy, invisible wounds of deep psychological trauma.',
+    body: `<h2>A Generation in Trauma</h2><p>For a child in Gaza or the West Bank, the traditional markers of childhood have been entirely erased. The loss of parents and siblings, the violent disruption of their education, and the persistent lack of a safe environment have created a pervasive atmosphere of "toxic stress." Psychologists warning of a mental health catastrophe note that children are exhibiting severe signs of trauma, including night terrors, selective mutism, chronic anxiety, and severe regressions in development.</p><p>The infrastructure of childhood has been systematically dismantled. Countless schools, parks, and community centers have either been bombed, damaged, or converted into emergency shelters for the displaced. Furthermore, the trauma is compounded by severe physiological threats. Malnutrition, stemming from acute food shortages, threatens to cause irreversible stunting in young children, while the lack of basic pediatric healthcare means preventable diseases are spreading rapidly through overcrowded camps.</p><p>Despite living in an environment saturated with violence and uncertainty, the resilience of these young minds is remarkable. When asked, Palestinian children do not speak of geopolitical victories; they speak of wanting to return to school, of playing football without listening for airstrikes, and of becoming doctors or teachers to rebuild their communities.</p><p>Humanitarian organizations are urgently stressing that emergency relief must go beyond food and bandages. Comprehensive, long-term psychosocial support programs are absolutely vital. If the world hopes to see a peaceful future in the region, it must first protect, heal, and nurture its most vulnerable and traumatized generation.</p>`
   },
-  '1967': {
-    section: 'Foundational History', color: 'red', title: '1967: The Architecture of Military Governance',
-    deck: 'The implementation of modern administrative travel permit parameters.',
-    lead: 'The administrative parameters established post-1967 consolidated spatial constraints across urban spaces.',
-    body: '<h2>Permit System Implementations</h2><p>Military tracking commands built following the Six-Day War introduced systematic checkpoint lines, establishing structural control matrices over trade networks and daily civilian movement.</p>'
+  'displacement-despair': {
+    section: 'Refugee Crisis', color: 'ink', title: 'Displacement and Despair—The Palestinian Refugee Crisis',
+    deck: 'The Palestinian refugee crisis remains one of the longest unresolved displacement crises in modern history.',
+    lead: 'Today, millions of Palestinians hold refugee status, a legacy of decades of conflict, dispossession, and territorial fragmentation.',
+    body: `<h2>Generations of Exile</h2><p>Across the Gaza Strip, the West Bank, and neighboring countries like Lebanon, Jordan, and Syria, generations of families live in densely populated, heavily urbanized refugee camps. What were meant to be temporary tent settlements decades ago are now permanent concrete labyrinths. These camps suffer from chronic overcrowding, severely inadequate sanitation, and a desperate lack of clean water and vital healthcare services.</p><p>The psychological toll of this enduring displacement is profound. For Palestinian refugees, the loss of their ancestral home is not merely a historical footnote; it is a deep, generational wound that shapes their entire identity. The keys to old family homes, passed down from grandparents to grandchildren, are kept as sacred heirlooms and symbols of a deeply held hope to one day return.</p><p>The weight of supporting this massive population falls heavily on host countries and international bodies like UNRWA, which continually face funding shortfalls and operational constraints. The refugee experience is the lens through which the broader Palestinian struggle must be understood. It is not exclusively a fight for territorial boundaries; it is a fundamental quest for human dignity, legal recognition, and the universal right to belong to a place called home.</p>`
   },
-  'gaza-blockade': {
-    section: 'Geopolitics Matrix', color: 'ink', title: 'The Enclosure of Access: Tracking Maritime Frontiers',
-    deck: 'An analytical evaluation mapping trade restrictions and infrastructure allocation patterns.',
-    lead: 'Evaluating peripheral containment lines requires assessing tracking layouts across maritime boundaries and freight logistics hubs.',
-    body: '<h2>Maritime Containment</h2><p>The systematic charting of trade monitoring vectors introduces automated regulatory lines, generating structural limits on domestic manufacturing capabilities and local mechanical acquisitions.</p>'
+  'barriers-survival': {
+    section: 'Human Rights', color: 'red', title: 'Barriers to Survival—How Restrictions Affect Palestinians',
+    deck: 'The challenges facing Palestinians are not solely the result of active military engagement; they are heavily dictated by an elaborate, pervasive system of restrictions.',
+    lead: 'These barriers systematically choke movement, economic development, and access to the most basic human rights.',
+    body: `<h2>The Architecture of Restriction</h2><p>In the West Bank, a sprawling network of military checkpoints, physical roadblocks, and the separation wall fragments communities and isolates families. This architecture of restriction turns the most mundane daily activities into agonizing, hours-long ordeals.</p><p>Consider the reality of needing official military permission simply to access specialized medical care. Patients requiring oncology treatments or complex surgeries unavailable in their immediate vicinity must navigate a convoluted and highly restrictive permit system. Often, permits are delayed or denied without explanation, resulting in devastating health consequences.</p><ul><li><strong>Agriculture:</strong> Farmers are frequently separated from their own lands and olive groves by gates and walls, destroying their livelihoods and severing their connection to their heritage.</li><li><strong>Labor:</strong> Workers seeking employment outside their immediate enclaves face daily, humiliating queues at checkpoints, heavily limiting their ability to provide for their families.</li><li><strong>Emergency Services:</strong> Ambulances and fire services are frequently delayed at checkpoints, turning a routine emergency response into a fatal waiting game.</li></ul><p>Human rights organizations have repeatedly condemned these systemic barriers. They argue that true peace and stability can never be achieved while millions of people are subjected to an infrastructure designed to restrict their freedom of movement, suffocate their economy, and deny them their basic human dignity.</p>`
+  },
+  'beyond-aid': {
+    section: 'Global Support', color: 'gold', title: 'Beyond Aid—How the World Can Support Palestinians',
+    deck: 'In the face of the overwhelming crisis in the Palestinian territories, the immediate delivery of humanitarian aid remains absolutely critical, but aid alone is not enough.',
+    lead: 'Moving beyond an endless cycle of destruction and emergency relief requires a profound shift in how the global community engages with the Palestinian struggle.',
+    body: `<h2>Addressing Systemic Injustice</h2><p>International experts and grassroots advocates are increasingly clear: while aid keeps people alive, it cannot, and will not, solve the root causes of the crisis. It demands a transition from treating the symptoms of the conflict to actively addressing the systemic injustices that fuel it.</p><p>Experts emphasize that sustainable change relies on several crucial pillars:</p><ul><li><strong>International Accountability:</strong> Upholding international humanitarian law without exception, and ensuring that violations against civilians are investigated and met with meaningful consequences.</li><li><strong>Human Rights Advocacy:</strong> Recognizing that Palestinians are entitled to the exact same rights, freedoms, and self-determination as any other population on earth.</li><li><strong>Empowering Local Voices:</strong> Supporting Palestinian-led initiatives, civil society organizations, and peacebuilders who are working tirelessly on the ground for justice and societal rebuilding.</li></ul><p>Global citizens play a vital role in this transition. The public can drive change by actively seeking out and sharing accurate, nuanced information that elevates Palestinian voices. Furthermore, individuals can exercise their democratic power by urging their local and national policymakers to condition diplomatic and military support on strict adherence to human rights standards. Standing in true solidarity with Palestinians means moving beyond sympathy and demanding actionable, political solutions that guarantee freedom, equality, and lasting peace.</p>`
   }
 };
 
@@ -2155,13 +1439,6 @@ function openDonationModal() {
   const customEnteredValue = parseInt(inputElement.value, 10);
   const finalCalculatedAmount = (customEnteredValue > 0) ? customEnteredValue : activeCheckoutAmount;
   executeSecureServerCheckout(finalCalculatedAmount, document.getElementById('donSubmitBtn'));
-}
-
-function openSupportPageDonationModal() {
-  const inputElement = document.getElementById('otIn');
-  const customEnteredValue = parseInt(inputElement.value, 10);
-  const finalCalculatedAmount = (customEnteredValue > 0) ? customEnteredValue : activeCheckoutAmount;
-  executeSecureServerCheckout(finalCalculatedAmount, document.getElementById('otSupportSubmitBtn'));
 }
 
 async function synchronizeLiveLedgerData() {
@@ -2239,7 +1516,6 @@ function publishCustomArticle() {
   setTimeout(() => { dashboardNotificationBanner.style.display = "none"; }, 5000);
 }
 
-
 const SafepayConnect = {
   initializePayment: async function(amount) {
     const response = await fetch(`${BACKEND_URL}/api/checkout/safepay`, {
@@ -2267,11 +1543,6 @@ const SafepayConnect = {
     document.getElementById('donPct').textContent = pct + '%';
   }
 };
-
-
-
-
-
 
 window.addEventListener('DOMContentLoaded', () => {
   synchronizeLiveLedgerData();
