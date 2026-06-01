@@ -1103,6 +1103,16 @@
 
 
   </style>
+
+      <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1006G7BX5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-X1006G7BX5');
+    </script>
 </head>
 <body>
 
@@ -1410,13 +1420,20 @@ const ARCHIVE_REGISTRY = {
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-  
+
   const targetPage = document.getElementById(`page-${pageId}`);
   if (targetPage) targetPage.classList.add('active');
-  
+
   const navBtn = document.getElementById(`nav-${pageId}`);
   if (navBtn) navBtn.classList.add('active');
-  
+
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_view', {
+      page_title: pageId,
+      page_path: '/' + pageId
+    });
+  }
+
   window.scrollTo(0, 0);
 }
 
