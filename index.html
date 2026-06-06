@@ -1095,7 +1095,26 @@
   .pub-row { flex-direction: column; align-items: stretch; }
   .btn-pub { width: 100%; }
 }
-  </style>
+  
+.legal-dropdown{position:relative;}
+.legal-menu{
+display:none;position:absolute;top:100%;right:0;
+background:#16100A;min-width:220px;z-index:1000;
+}
+.legal-dropdown:hover .legal-menu{display:block;}
+.legal-menu a{
+display:block;color:#F4EFE4;text-decoration:none;
+padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.legal-modal{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);
+z-index:5000;padding:40px;overflow:auto;
+}
+.legal-content{
+background:#F4EFE4;max-width:900px;margin:auto;padding:30px;
+}
+
+</style>
 </head>
 <body>
 
@@ -1107,7 +1126,17 @@
     <li><button onclick="showPage('home')" class="active" id="nav-home">Home</button></li>
     <li><button onclick="showPage('articles')" id="nav-articles">Articles</button></li>
     <li><button onclick="showPage('editor')" id="nav-editor">Write</button></li>
-  </ul>
+  
+<li class="legal-dropdown">
+<button>Legal ▾</button>
+<div class="legal-menu">
+<a href="#" onclick="showLegal('privacy')">Privacy Policy</a>
+<a href="#" onclick="showLegal('terms')">Terms & Conditions</a>
+<a href="#" onclick="showLegal('service')">Service Policy</a>
+</div>
+</li>
+
+</ul>
 </nav>
 
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -1146,7 +1175,7 @@
     </div>
     <div class="don-c">
       <span class="don-total-lbl">Total Funds Contributed</span>
-      <div class="don-num" id="donAmt">Rs. 0</div>
+      <div class="don-num" id="donAmt">Rs. 0.00</div>
       <p class="don-donors" id="donDonors">Synchronizing tracking ledgers...</p>
       <div class="don-prog-wrap">
         <div class="don-track"><div class="don-fill" id="donBar" style="width:0%"></div></div>
@@ -1543,5 +1572,35 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(synchronizeLiveLedgerData, 15000);
 });
 </script>
+
+
+
+
+<div id="legalModal" class="legal-modal">
+<div class="legal-content">
+<button onclick="document.getElementById('legalModal').style.display='none'">Close</button>
+<h2 id="legalTitle"></h2>
+<div id="legalBody"></div>
+</div>
+</div>
+
+<script>
+function showLegal(type){
+const title=document.getElementById('legalTitle');
+const body=document.getElementById('legalBody');
+if(type==='privacy'){
+title.innerHTML='Privacy Policy';
+body.innerHTML='<p>Email: support@standforgaza.org<br>Phone: +92 321 7465715</p><p>We collect information necessary to process donations and improve services. We do not sell personal information. Payment data is handled by secure third-party processors.</p>';
+}else if(type==='terms'){
+title.innerHTML='Terms & Conditions';
+body.innerHTML='<p>Use of this website constitutes acceptance of our terms. Donations are voluntary and generally non-refundable except duplicate transactions reported within 7 days. Governed by the laws of Pakistan.</p>';
+}else{
+title.innerHTML='Service Policy';
+body.innerHTML='<p>No physical products are shipped. Donations support humanitarian and operational activities. Communications are delivered electronically.</p>';
+}
+document.getElementById('legalModal').style.display='block';
+}
+</script>
+
 </body>
 </html>
