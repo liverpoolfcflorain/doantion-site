@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stand for Gaza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* ==========================================================================
+       1. RESET & CSS VARIABLES (TOKENS)
+       ========================================================================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F4EFE4; --parchment: #EAE2CC; --ink: #16100A; --ink2: #2A1E0E;
+      --red: #7A1515; --red2: #A83020; --olive: #3D5224; --gold: #8C6A1A;
+      --gold2: #B8892A; --warm: #C9B99A;
+    }
+    body { background: var(--cream); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+    /* ==========================================================================
+       MODAL STYLES
+       ========================================================================== */
+    .modal-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(16, 10, 5, 0.85); align-items: center; justify-content: center; }
+    .modal-content { background: var(--cream); padding: 2.5rem; border: 2px solid var(--ink); max-width: 400px; width: 90%; position: relative; text-align: center; }
+    .modal-close { position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2rem; font-family: sans-serif; }
+    .bank-details { background: white; padding: 1rem; margin: 1.5rem 0; text-align: left; border: 1px solid var(--warm); }
+
+    /* ==========================================================================
+       2. NAVIGATION BAR
+       ========================================================================== */
+    nav { background: var(--ink); display: flex; align-items: stretch; justify-content: space-between; position: sticky; top: 0; z-index: 200; border-bottom: 2px solid var(--red); }
+    .nav-logo { color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; padding: 0 1.5rem; display: flex; align-items: center; letter-spacing: .04em; cursor: pointer; background: none; border: none; }
+    .nav-links { display: flex; list-style: none; }
+    .nav-links li a, .nav-links li button { color: #C4B898; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: .9rem 1rem; display: flex; align-items: center; transition: color .2s, background .2s; border: none; cursor: pointer; font-family: 'Source Serif 4', serif; background: none; }
+    .nav-links li button:hover { color: var(--cream); background: rgba(255, 255, 255, .05); }
+    .nav-links li button.active { color: var(--cream); border-bottom: 2px solid var(--red); }
+
+    /* ==========================================================================
+       ... (Rest of your CSS remains unchanged) ...
+    */
+    .page { display: none; } .page.active { display: block; }
+    .hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,10,5,.92) 40%, rgba(16,10,5,.4) 75%); }
+    .hero-content { position: relative; z-index: 2; padding: 3rem; max-width: 780px; }
+    .btn-wh { background: white; color: var(--ink); font-family: 'Source Serif 4', serif; padding: .65rem 1.6rem; border: 2px solid white; cursor: pointer; }
+    
+    .don-band { background: var(--ink2); border-top: 3px solid var(--red); border-bottom: 3px solid var(--red); display: grid; grid-template-columns: 1fr auto 1fr; }
+    .don-l, .don-r { padding: 1.8rem 2.5rem; }
+    .don-c { padding: 1.8rem 2rem; text-align: center; }
+    .don-num { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; color: var(--gold2); }
+    .don-presets { display: flex; gap: .4rem; }
+    .don-pre { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .15); color: white; padding: .35rem .8rem; cursor: pointer; }
+    .don-pre.active { background: var(--red); }
+    .don-in { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); color: white; padding: .45rem .8rem; width: 90px; }
+    .don-submit { background: var(--red); color: white; padding: .5rem 1.2rem; border: none; cursor: pointer; }
+
+    @media (max-width: 768px) {
+      .don-band { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <button class="nav-logo" onclick="showPage('home')">Stand for Gaza</button>
+  <ul class="nav-links">
+    <li><button onclick="showPage('home')" class="active" id="nav-home">Home</button></li>
+    <li><button onclick="showPage('articles')" id="nav-articles">Articles</button></li>
+    <li><button onclick="showPage('editor')" id="nav-editor">Write</button></li>
+  </ul>
+</nav>
+
+<div class="page active" id="page-home">
+  <div class="hero">
+    <img src="jeurselam.jpg" alt="Al-Quds Old City Road"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>A history of Palestine told through <em>structures</em>.</h1>
+      <button class="btn-wh" onclick="showPage('articles')">Explore Archive</button>
+    </div>
+  </div>
+
+  <section class="don-band">
+    <div class="don-l">
+      <h3 style="color:white;">Help us maintain our digital hosting networks.</h3>
+    </div>
+    <div class="don-c">
+      <div class="don-num" id="donAmt">Rs. 0.00</div>
+    </div>
+    <div class="don-r">
+      <div class="don-presets">
+        <button class="don-pre active" onclick="selDon(2500, this)">Rs. 2,500</button>
+        <button class="don-pre" onclick="selDon(5000, this)">Rs. 5,000</button>
+      </div>
+      <div class="don-row" style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+        <input class="don-in" type="number" id="donIn" placeholder="Custom"/>
+        <button class="don-submit" id="donSubmitBtn" onclick="openDonationModal()">Donate Now</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Bank Transfer Modal -->
+<div id="bankModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeDonationModal()">✕</button>
+    <h3>Bank Transfer Details</h3>
+    <p>Please complete your transfer to the following account details:</p>
+    <div class="bank-details">
+        <p><strong>Bank Name:</strong> Mezzan bank </p>
+        <p><strong>Account Title:</strong> JAIYANA SYED</p>
+        <p><strong>Account Number:</strong> 11610114428775</p>
+        <p><strong>IBAN:</strong> PK90MEZN0011610114428775</p>
+    </div>
+    <p style="margin-top:1rem; font-size:0.8rem; color:var(--red2);">Once transferred, please email the receipt to support@standforgaza.org</p>
+  </div>
+</div>
+
+<script>
+  let activeCheckoutAmount = 2500;
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById(`page-${pageId}`);
+    if(target) target.classList.add('active');
+  }
+
+  function selDon(amount, contextButton) {
+    activeCheckoutAmount = amount;
+    document.querySelectorAll('.don-pre').forEach(b => b.classList.remove('active'));
+    contextButton.classList.add('active');
+  }
+
+  function openDonationModal() {
+    document.getElementById('bankModal').style.display = 'flex';
+  }
+
+  function closeDonationModal() {
+    document.getElementById('bankModal').style.display = 'none';
+  }
+</script>
+</body>
+</html>
